@@ -1,0 +1,62 @@
+- model: hospital.Hospital
+  pk: '77930478-4751-4047-baea-9e1938a82ff9'
+  fields:
+    name: Bicêtre
+    alias: BCT
+
+- model: hospital.Service
+  pk: '3684c322-579d-49c4-a689-afff75b7d8ec'
+  fields:
+    name: Réanimation Chirurgicale
+    alias: Réa-Chir
+    hospital: '77930478-4751-4047-baea-9e1938a82ff9'
+
+- model: hospital.Unit
+  pk: 'b37854fd-8dee-4620-8fb5-5acb37172ed9'
+  fields:
+    name: Hégoa
+    alias: A
+    service: '3684c322-579d-49c4-a689-afff75b7d8ec'
+- model: hospital.Unit
+  pk: '67d1c1b7-29e0-4784-bddc-7c267d37c4a9'
+  fields:
+    name: Sirroco
+    alias: B
+    service: '3684c322-579d-49c4-a689-afff75b7d8ec'
+- model: hospital.Unit
+  pk: '48d31e0a-875b-440b-b1ee-85535e356643'
+  fields:
+    name: Pampero
+    alias: C
+    service: '3684c322-579d-49c4-a689-afff75b7d8ec'
+
+- model: hospital.Bed
+  pk: 'ad9f2b21-c5f0-435f-a45f-8b35a0d55e3e'
+  fields:
+    name: A1
+    alias: A1
+    unit: 'b37854fd-8dee-4620-8fb5-5acb37172ed9'
+- model: hospital.Bed
+  pk: '59bb1ba1-c4ca-4ec0-932f-85d30e629575'
+  fields:
+    name: A2
+    alias: A2
+    unit: 'b37854fd-8dee-4620-8fb5-5acb37172ed9'
+- model: hospital.Bed
+  pk: '636c8e48-ea82-41f9-8b4d-7972d2d44b8a'
+  fields:
+    name: A3
+    alias: A3
+    unit: 'b37854fd-8dee-4620-8fb5-5acb37172ed9'
+- model: hospital.Bed
+  pk: '16cc6db9-c8e9-47c6-86cd-b56cc9887659'
+  fields:
+    name: A4
+    alias: A4
+    unit: 'b37854fd-8dee-4620-8fb5-5acb37172ed9'
+- model: hospital.Bed
+  pk: '37990d28-5845-4278-af46-1b3ec135d671'
+  fields:
+    name: A5
+    alias: A5
+    unit: 'b37854fd-8dee-4620-8fb5-5acb37172ed9'
