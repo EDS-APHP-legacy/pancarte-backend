@@ -56,5 +56,3 @@ def http_delete(*path, id):
     if result.status_code != 204:
         raise RuntimeError(result.reason)
 
-    return json.loads(result.text)
-

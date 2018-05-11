@@ -17,13 +17,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from annotation.urls import router as annotation_router
-from data.urls import router as data_router
 from hospital.urls import router as hospital_router
 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('annotation/', include(annotation_router.urls)),
-    path('data/', include(data_router.urls)),
+    path('annotations/', include(annotation_router.urls)),
     path('hospital/', include(hospital_router.urls)),
 ]

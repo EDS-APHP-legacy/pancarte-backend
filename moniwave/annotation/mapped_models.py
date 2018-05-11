@@ -6,33 +6,21 @@ from utils.pancarte_db import http_get, http_post, http_put, http_delete
 class MappedObject(object):
     @classmethod
     def get(cls, **where):
-        try:
-            result = http_get(*cls.path, **where)
-        except RuntimeError as e:
-            return server_error(None)
+        result = http_get(*cls.path, **where)
         return [cls(**entry) for entry in result]
 
     @classmethod
     def insert(cls, **params):
         params = {k: params[k] for k in cls.required_fields}
-        try:
-            result = http_post(*cls.path, **params)
-        except RuntimeError as e:
-            return server_error(None)
+        result = http_post(*cls.path, **params)
         return cls(**result)
 
     def update(self):
         params = {k: getattr(self, k) for k in self.required_fields}
-        try:
-            http_put(*self.path, id=self.id, **params)
-        except RuntimeError as e:
-            return server_error(None)
+        http_put(*self.path, id=self.id, **params)
 
     def delete(self):
-        try:
-            http_delete(*self.path, id=self.id)
-        except RuntimeError as e:
-            return server_error(None)
+        http_delete(*self.path, id=self.id)
 
 
 class AnnotationType(MappedObject):
